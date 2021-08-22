@@ -214,7 +214,7 @@ int main()
                         ghost[deadGhost].kill();
                         stopSound(munchSound);
                         startSound(eatGhostSound);
-                        tempPoints = pow(2, pacman[pacmanActive]->ghostsEaten()) * 100;
+                        tempPoints = static_cast<unsigned int>(pow(2, pacman[pacmanActive]->ghostsEaten()) * 100);
                         score += tempPoints;
                         ghostPointText.setPosition(LeftSideOfMaze + tempLocation.x * 20.0f - 15, TopOfMaze + tempLocation.y * 20.0f - 10);
                         ghostPointText.setString(sf::String(to_string(tempPoints)));
