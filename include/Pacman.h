@@ -5,7 +5,7 @@
 #include <SFML/System.hpp>
 
 #include "Maze.h"
-#include "Ghosts.h"
+#include "Ghost.h"
 
 using sf::RectangleShape;
 using sf::Vector2u;
