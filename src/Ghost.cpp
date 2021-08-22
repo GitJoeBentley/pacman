@@ -54,7 +54,7 @@ void Ghost::setTextureImage()
         horizontalTextureOffset = 3;
     else
         horizontalTextureOffset = 0;
-    ghostImageLocationInTexture.left = horizontalTextureOffset * GhostSize.x;
+    ghostImageLocationInTexture.left = static_cast<int>(horizontalTextureOffset * GhostSize.x);
 
     // set texture for Ghost (sf::RectangleShape)
     ghostImageLocationInTexture.top = static_cast<int>((2*number+verticalTextureOffset) * GhostSize.y);
@@ -425,7 +425,7 @@ void Ghost::turnGhostsBlue()
     // animate
     ++verticalTextureOffset %= 2;
     ghostImageLocationInTexture.top = static_cast<int>((2*4+verticalTextureOffset) * GhostSize.y);
-    ghostImageLocationInTexture.left = horizontalTextureOffset * GhostSize.x;
+    ghostImageLocationInTexture.left = static_cast<int>(horizontalTextureOffset * GhostSize.x);
     state = Blue;
     setTextureRect(ghostImageLocationInTexture);
     setTexture(&ghostTexture);
