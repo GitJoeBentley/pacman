@@ -17,7 +17,7 @@
 #include "Maze.h"
 #include "Pacman.h"
 #include "DyingPacman.h"
-#include "Ghosts.h"
+#include "Ghost.h"
 #include "DeadGhost.h"
 
 using namespace std;
