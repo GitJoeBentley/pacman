@@ -60,7 +60,7 @@ void DeadGhost::setTextureImage()
         horizontalTextureOffset = 3;
     else
         horizontalTextureOffset = 0;
-    deadGhostImageLocationInTexture.left = horizontalTextureOffset * GhostSize.x;
+    deadGhostImageLocationInTexture.left = static_cast<int>(horizontalTextureOffset * GhostSize.x);
 
     // set texture for Ghost (sf::RectangleShape)
     //deadGhostImageLocationInTexture.top = static_cast<int>((2*num+verticalTextureOffset) * GhostSize.y);
@@ -74,7 +74,7 @@ void DeadGhost::setTextureImage()
 
 Location DeadGhost::getNextLocation()
 {
-    unsigned short key = (location.y << 8) + location.x;
+    unsigned short key = static_cast<unsigned short>((location.y << 8) + location.x);
     unsigned short value = DeadGhostLocation[key];
     setTextureImage();
     return Location(value%256,value/256);
